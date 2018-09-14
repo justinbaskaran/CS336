@@ -57,7 +57,7 @@ function Student(name,dob,friends,subject) {
     this.subject = subject;
 }
 Student.prototype = Object.create(Person.prototype);
-Student.prototype.printGreeting = function() {
+Student.prototype.studentGreeting = function() {
     return "I'm a student!";
 };
 ////////////////////////////////////////////////////////////
@@ -115,6 +115,7 @@ if (s1 instanceof Person)
   console.log("\nNO, Defversiontwo IS AN ILLEGAL ALIEN NOT FROM EARTH!");
 }
 
+console.log("\n"+ s1.studentGreeting());
 console.log("\nMy name is "+ s1.getName() + ". I am "+ s1.getdob() + " years old."+ " I am friends with... "
             + s1.seeFriends());
 
