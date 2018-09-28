@@ -52,10 +52,16 @@ body {
 }
 
 
-.numbered
+p.numbered
 {
   color: #000;
 }
+p.numbered:before
+{
+  content: "(" counter(headnum, upper-latin) ") ";
+  counter-increment: headnum;
+}
+
 p {
     color: #33F;
 }
