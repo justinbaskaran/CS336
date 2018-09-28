@@ -133,3 +133,6 @@ s1.addFriend(s2);
 
 console.log("\nMy name is "+ s1.getName() + ". I am "+ s1.getdob() + " years old."+ " I am friends with... "
             + s1.seeFriends());
+
+
+console.log("\n"  + s1.personGreeting());

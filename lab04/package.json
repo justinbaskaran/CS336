@@ -1,0 +1,14 @@
+{
+  "name": "Lab04",
+  "version": "1.0.0",
+  "description": "Simple Node/Express server for static files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Justin Baskaran",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
