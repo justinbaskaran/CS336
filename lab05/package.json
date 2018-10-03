@@ -1,0 +1,16 @@
+{
+  "name": "unit05-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "kvlinden",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "serve-index": "^1.8.0",
+    "stylus": "^0.54.5"
+  }
+}
