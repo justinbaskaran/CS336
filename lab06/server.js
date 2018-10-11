@@ -1,6 +1,6 @@
-/**
- * This implements some HTTP method/code, form and cookie examples.
- */
+// Justin Baskaran
+// Lab 06
+// CS 336
 
 const express = require('express');
 const app = express();
