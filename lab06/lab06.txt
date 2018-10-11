@@ -1,0 +1,36 @@
+CURL COMMANDS:
+
+curl -X DELETE localhost:3000/request -H 'Content-Type: application/json'
+-- Hello, DELETE!
+
+curl -X PUT localhost:3000/request -H 'Content-Type: application/json'
+-- Hello, PUT!
+
+curl -X POST localhost:3000/request -H 'Content-Type: application/json'
+-- Hello, POST!
+
+curl localhost:3000/request
+-- Hello, GET!
+
+
+Identify the request methods that you can and can’t test using the two tools listed above. If a method cannot be testing using a particular tool, explain why this is the case. List the Curl commands you used successfully.
+	-- Broswer:  GET 
+	-- Curl: GET,DELETE,PUT, and POST
+	-- Reasoning: In Broswers you simply GET the data from the SERVER. (HTML pages, JS Scripts, etc...)the Server sends HTML pages with information filled in the form, to the server, the server responds wiht a page. (Hello, form POST!....)
+		In CURL, you are just requesting the json packet of info from the server corresponding with your HTTP method.
+
+
+What is the most appropriate HTTP response code for pages that aren’t defined by an Express route?
+	--400, becuase error codes beginning with 4xx are codes
+		that can't be found by the client.
+	
+
+What HTTP methods do forms support?
+	-- GET, POST 
+		GET is usually the HTML FORM
+		POST is usally the response from the server
+
+How is the form data being passed back to the server and what syntactic form does it take? Is the data modified in any way?
+	-- Through the server.js. The form has the ip address in it (in this case localhost), and it is being sent to that address.
+		It takes the form of a JSON object. The data is not being modified, but being inserted into a POST that is called after
+		The HTML form button is clicked.
