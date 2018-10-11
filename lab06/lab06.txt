@@ -12,6 +12,12 @@ curl -X POST localhost:3000/request -H 'Content-Type: application/json'
 curl localhost:3000/request
 -- Hello, GET!
 
+CURL COMMAND TO SET POST DATA:
+curl -X POST localhost:3000/request -d '{"username":"xyz","password":"xyz"}' -H 'Content-Type: application/json'
+
+CURL COMMAND TO SET PUT DATA:
+curl -X PUT localhost:3000/request -d '{"username":"xyz","password":"xyz"}' -H 'Content-Type: application/json'
+
 
 Identify the request methods that you can and can’t test using the two tools listed above. If a method cannot be testing using a particular tool, explain why this is the case. List the Curl commands you used successfully.
 	-- Broswer:  GET 
