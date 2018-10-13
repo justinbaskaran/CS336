@@ -1,6 +1,5 @@
-/**
- * This implements some examples using jQuery and AJAX.
- */
+// Justin Baskaran
+// Lab  07 
 
 const express = require("express")
 const app = express();
