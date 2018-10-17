@@ -18,7 +18,7 @@ app.get("/", function(req, res) {
     res.send("Hello, Lab 7!");
 });
 
-app.get("/fetch", function(req, res) {
+app.get("/hello", function(req, res) {
     res.send({"content" : req.query.name});
 });
 
