@@ -1,0 +1,39 @@
+The component structure of the application. What makes the UI composable and why does this matter?
+	- You have four elements, CommentList, CommentForm, CommentBox, and Comment. With ReactJS you
+	can return a tree of HTML commands, which make ReactJS more composable then ohter languages. 
+
+What JSX does.
+	- A javascript + XML language. You do not have to use this for React, but you can use it, since it 
+	is more similar to HTML ...
+
+Why ReactJS is safe with respect to XSS.
+	- ReactJS doesn't actually generate DOM nodes, they are simply peices of data that React knows how to
+	deal with. WE are not generating HTML strings/objects so XSS protection is the default.
+
+How the data flows through the components. How are comments loaded? created? saved.
+	- Loaded,created: CommentBox.render() -> CommentList.(this.stat.data) -> CommentList.render() -> Comment.author, 		comment.id, comment.text -> comment.render()
+	- Saved; CommentForm.onCommentSumbit -> ajax call to server, that sends JSON data to server, which adds data...
+
+		
+The nature and purpose of props and state. Which is immutable and which is mutable and why does this distinction matter?
+	- Props: Immutable. They read data from another a parent function. 
+	- State: Mutable. To get data to interact with the user, chagne, manpulate data this is needed. 
+	- The difference is important because you can't update Props, you can update a State using setState(). 
+
+
+
+Try editing the comments.json file (to add or remove a legal comment). What happens and why?
+	- Removing just the text in the text json object, makes the text dissepear. But removing the text json object
+		attribute and value, makes the page crash. This happens because the page does not know how to deal with a 
+		missing json attribute that it expects to be there. 
+
+When the CommentBox has loaded comments from the server (in loadCommentsFromServer()), why doesn’t it call render() to make them visible?
+	- It doesnt call render because once data has been laoded it has to set the State of the data element
+	that populates the JSON data list that will later populate the data list. 
+
+Of what advantage, if any, is it to require that components always represent the current state of the view?
+	- This way all the data that is displayed (in this case) is updated and accurately represents the data in teh .JSON file on the server. if the server and the current state of the view is out of sync, then the components will not refelct the actual data of the website. 
+
+The app implements optimistic updates. Isn’t optimism here more like foolishness? What if the server rejects the new comment (for whatever reason)? 
+	- Then you will have no new data, it will appear just like it was before adding. If you add a new comment that the 
+	server rejects, then it will (on the surface) just act like ignoring that comment. 
