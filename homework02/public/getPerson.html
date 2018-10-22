@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+   <meta charset="utf-8">
+    <title>Homework2</title>
+
+    <script src="jquery-ui/jquery.js"> </script>
+    <script src="jquery-ui/jquery-ui.js"> </script>
+
+</head>
+<body>
+ <h1>Get Person Information:</h1>
+
+  <form action="/getPerson" method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id"></input>
+        <button id="submidid" type="submit">Find Person by ID</button>
+  </form>
+
+  <script>
+     $(document).ready(function() {
+        $( 'form' ).submit(function( event ) {
+       $( "p" ).remove();
+       event.preventDefault();
+  
+
+       $.ajax({
+      url: "/getPerson",
+      type: "POST",
+      data: {id: $( "#id" ).val()}
+      })
+      .done(function( result ) {
+          $("body").append( "FirstName: " +result.content.firstname  + "<br> LastName: " +result.content.lastname + "<br> Date: "+result.content.start);
+        })
+        .fail(function(xhr, status, errorThrown) {
+           console.log('AJAX request failed...');
+                $("body").append("<p> no data yet... </p>");
+             })
+          });
+        }); 
+  </script>
+
+</html>
