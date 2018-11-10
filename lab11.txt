@@ -1,0 +1,19 @@
+Compare and contrast your development and production deployments and explain how each is designed.
+	-  Production:  Once a feature is implemented and tested it is moved to the production deployment (branch).
+		- It can be designed through a webpack.production.config.js, you can add new features to this file, this production ready file, should be optimized, and "minified" for broswers. This is what we added in this previous part of the lab, minified code, optmized for the broswer.
+	- Development: Once a feature is created it can be tested in a this branch.
+		- Here we used the webpack.production.config.js to show a 'production ready' branch of the webpack project. This means we can use the webpack.config.js for adding features (the production deployment)
+
+List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the deployed application files.
+	- Hot Module Replacment- There is no more hot modules in the bundle.js.
+	- OccuranceOrderPlugin - The resulting bundle.js is less size.
+	- UglifyJS-  The resulting JS file is compressed into smaller amount of lines.
+	- ExtractTextPlugin- I can see a .css file that is made in the DOM on the client side.
+
+What advantage is there is deploying an application to a PaaS tool like Heroku?
+	- 
+
+How does Heroku know how to install and run your application (after pulling it from the specified branch on GitHub)?
+	-
+
+
