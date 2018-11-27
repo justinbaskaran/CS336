@@ -1,24 +1,35 @@
 What benefit did using the React Router bring to the application?
-	- 
+	- Using React Router made the routes we used, stay in line with the calls.
+	- It enables us to use Broswer History, as opposed to Hash history, where our form data, is
+	stored in the URL.
+	- Example: When we edited a comment, it created the /:ID of comment
 
 Which is better, hash history or browser history?
-
+	- Broswer History doesn't store state information in the URL, but hash history does.
+	- So in the intrest of security, it is probably better to use broswer history, becuase it does
+	not store state information in the URL.
 
 Why does the server (either Webpack Dev Server or the Express server) have to be modified to support the 
 browser history? Compare this with the hash-based server demonstrated in class, which didn't require such 
 modifications.
+	- Once a form is sent to a client, the data that is submiited is sent back to the server in the URL. So the default action the server takes is to, hash the data in the URL and sent it back to the Server.
+	- But to have only the data be sent back, you must configure the server to not hash form responses in the URL. 
 
 
 
 What state does the new CommentEdit component maintain and how does that compare with the state maintained by the CommentBox component?
-
+	- The CommentEdit maintains the information on the given ID's author, and title. 
+	- The CommentBox maintains information about the list of all the comments, and the comment form as well (data entry).
 
 
 What does the CommentEdit component do when the AJAX PUT or DELETE methods return successfully? How does this compare with what the “Cancel” button provided by the CommentEdit component does?
-
-
+	-      this.context.router.push('/');
+	- This line means that it will return to the default localhost:3000/, which means it goes back to the list of comments. 
+	- If you press the cancel button it will :<Link to='/'>Cancel</Link>
+		- This means it will go back to the default list of comments on localhost:3000/. 
 
 How is the Link added in the last step different from a simple HTML hyperlink?
-
+	- Link is part of the react-router module. 
+	- Link is also a property that is identifiable on only the server. since this React Router recognizes that the '/'  is the same thing as localhost:3000/. 
 
 
